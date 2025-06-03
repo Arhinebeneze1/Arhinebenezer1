@@ -1,3 +1,126 @@
-INDEX.HTML
-INDEX.CSS
-INDEX.JAVASCRIPT
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koffan All-in-One Math Suite</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons (optional, but nice for a calculator) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="koffan-suite-app">
+        <header class="suite-header">
+            <img src="koffan_logo.png" alt="Koffan Logo" id="koffan-logo-img"> <!-- You'll need to create/find a logo -->
+            <h1>Koffan Math & Calculation Hub</h1>
+        </header>
+           
+        <nav class="suite-nav">
+            <button class="nav-tab active" data-tab="calculator">
+                <i class="fas fa-calculator"></i> Standard Calculator
+            </button>
+            <button class="nav-tab" data-tab="math-learner">
+                <i class="fas fa-graduation-cap"></i> Math Learner
+            </button>
+            <button class="nav-tab" data-tab="formula-hub">
+                <i class="fas fa-flask"></i> Formula Hub
+            </button>
+            <button class="nav-tab" data-tab="word-problem-solver">
+                <i class="fas fa-puzzle-piece"></i> Word Problem Solver
+            </button>
+        </nav>
+
+        <main class="suite-main-content">
+            <!-- Standard Calculator Section -->
+            <section id="calculator" class="tab-content active">
+                <h2>Standard Calculator</h2>
+                <div class="calculator-grid">
+                    <div class="calc-display">
+                        <input type="text" id="calc-result" value="0" readonly>
+                        <div id="calc-history"></div>
+                    </div>
+                    <button class="calc-btn clear-all" data-action="clear-all">AC</button>
+                    <button class="calc-btn clear-entry" data-action="clear-entry">CE</button>
+                    <button class="calc-btn" data-action="percent">%</button>
+                    <button class="calc-btn operator" data-action="divide">/</button>
+
+                    <button class="calc-btn number">7</button>
+                    <button class="calc-btn number">8</button>
+                    <button class="calc-btn number">9</button>
+                    <button class="calc-btn operator" data-action="multiply">*</button>
+
+                    <button class="calc-btn number">4</button>
+                    <button class="calc-btn number">5</button>
+                    <button class="calc-btn number">6</button>
+                    <button class="calc-btn operator" data-action="subtract">-</button>
+
+                    <button class="calc-btn number">1</button>
+                    <button class="calc-btn number">2</button>
+                    <button class="calc-btn number">3</button>
+                    <button class="calc-btn operator" data-action="add">+</button>
+
+                    <button class="calc-btn number zero">0</button>
+                    <button class="calc-btn" data-action="decimal">.</button>
+                    <button class="calc-btn" data-action="sqrt">√</button>
+                    <button class="calc-btn equals" data-action="calculate">=</button>
+                </div>
+            </section>
+
+            <!-- Koffan Math Learner Section -->
+            <section id="math-learner" class="tab-content">
+                <!-- The HTML from your previous Math Learner will go here -->
+                <!-- For now, a placeholder: -->
+                <h2>Koffan Math Learner</h2>
+                <p>Interactive math quizzes to sharpen your skills!</p>
+                <div id="math-learner-container">
+                    <!-- Content from previous Math Learner's koffan-app div will be injected here by JS or copied -->
+                </div>
+            </section>
+
+            <!-- Formula Hub Section -->
+            <section id="formula-hub" class="tab-content">
+                <h2>Formula Hub</h2>
+                <select id="formula-category-select">
+                    <option value="">-- Select Category --</option>
+                    <option value="geometry">Geometry</option>
+                    <option value="simple-finance">Simple Finance</option>
+                    <!-- Add more categories as needed -->
+                </select>
+                <div id="formula-details-area">
+                    <!-- Formula inputs and results will appear here -->
+                </div>
+            </section>
+
+            <!-- Word Problem Solver Section -->
+            <section id="word-problem-solver" class="tab-content">
+                <h2>Word Problem Solver (Structured)</h2>
+                <select id="word-problem-type-select">
+                    <option value="">-- Select Problem Type --</option>
+                    <option value="addition_total">Addition: Find Total</option>
+                    <option value="subtraction_difference">Subtraction: Find Difference</option>
+                    <option value="multiplication_product">Multiplication: Find Product</option>
+                    <option value="division_share">Division: Share Equally</option>
+                    <!-- More complex types later -->
+                </select>
+                <div id="word-problem-input-area">
+                    <!-- Inputs for the selected word problem type -->
+                </div>
+                <button id="solve-word-problem-btn" class="control-btn" style="display:none;">Solve</button>
+                <div id="word-problem-solution" class="feedback"></div>
+            </section>
+        </main>
+
+        <footer class="suite-footer">
+            <p>© 2023-2024 Koffan Code School Software. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- You might want to separate JS for each module later -->
+    <!-- <script src="calculator.js"></script> -->
+    <!-- <script src="math_learner_module.js"></script> -->
+    <!-- <script src="formula_hub.js"></script> -->
+    <!-- <script src="word_problem_solver.js"></script> -->
+</body>
+</html>
